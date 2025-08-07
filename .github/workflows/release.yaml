@@ -17,3 +17,4 @@ jobs:
       - run: docker build -t ${{ secrets.DOCKER_USERNAME }}/vote-app:${{ github.sha }} .
       - run: docker tag ${{ secrets.DOCKER_USERNAME }}/vote-app:${{ github.sha }} ${{ secrets.DOCKER_USERNAME }}/vote-app:latest
       - run: docker push ${{ secrets.DOCKER_USERNAME }}/vote-app:${{ github.sha }}
+      - run: docker push ${{ secrets.DOCKER_USERNAME }}/vote-app:latest
