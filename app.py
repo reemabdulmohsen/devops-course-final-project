@@ -1,12 +1,12 @@
-import os
-from flask import Flask, request, redirect, url_for
 import redis
+from flask import Flask, redirect, request, url_for
 
 app = Flask(__name__)
 r = redis.Redis(host="redis", port=6379)
 
 
 OPTIONS = ["Reem", "Buthaina"]
+
 
 @app.route("/", methods=["GET"])
 def index():
@@ -23,6 +23,7 @@ def index():
         <li>Buthaina: {votes['Buthaina']}</li>
     </ul>
     """
+
 
 @app.route("/vote", methods=["POST"])
 def vote():
